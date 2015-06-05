@@ -1,10 +1,10 @@
-from .. import auth
+from .. import auth_blueprint
 from ..forms.login_form import LoginForm
 from ..models.user import User
 from flask import redirect, url_for
 from flask_login import login_user, logout_user, login_required
 
-@auth.route('/login', methods=['GET', 'POST'])
+@auth_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -14,7 +14,7 @@ def login():
             return redirect(url_for('main.index'))
     return redirect(url_for('auth.login'))
 
-@auth.route('/logout')
+@auth_blueprint.route('/logout')
 @login_required
 def logout():
     logout_user()

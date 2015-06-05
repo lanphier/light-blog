@@ -1,10 +1,10 @@
-from .. import auth
+from .. import auth_blueprint
 from ..forms.register_form import RegisterForm
 from ..models.user import User
 from app import db
 from flask import redirect, url_for
 
-@auth.route('/register', methods=['GET', 'POST'])
+@auth_blueprint.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():

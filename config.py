@@ -11,6 +11,9 @@ class Config(object):
     WTF_CSRF_ENABLED = False
     WTF_CSRF_CHECK_DEFAULT = False
 
+    OAUTH2_PROVIDER_ERROR_URI = '/oauth/errors'
+    OAUTH2_PROVIDER_TOKEN_EXPIRES_IN = 3600
+
     @staticmethod
     def init_app(self):
         pass

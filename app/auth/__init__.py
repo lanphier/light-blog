@@ -1,7 +1,7 @@
 from flask import Blueprint
 
-auth = Blueprint('auth', __name__)
+auth_blueprint = Blueprint('auth', __name__)
 
-from .views import login
-from .views import register
+from .controllers import login
+from .controllers import register
 
