@@ -2,10 +2,6 @@ from flask import Blueprint
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login', methods=['GET'])
-def login():
-    return 'login'
+from .views import login
+from .views import register
 
-@auth.route('/register', methods=['GET'])
-def register():
-    return 'register'
