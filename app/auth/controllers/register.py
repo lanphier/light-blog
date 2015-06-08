@@ -7,7 +7,6 @@ from flask import redirect, url_for, request, render_template, abort
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
-    response_data = {}
     response_error = {}
     if request.method == 'POST':
         form = RegisterForm()
@@ -24,8 +23,6 @@ def register():
                 response_error['code'] = UserError.UserNotExist
         else:
             response_error['code'] = UserError.IllegalForm
-        if not response_error:
-            response_data['error'] = response_error
-        return render_template('register.html', data=response_data)
+        return render_template('register.html', error=response_error)
     else:
-        return render_template('register.html', data=response_data)
+        return render_template('register.html', error=response_error)

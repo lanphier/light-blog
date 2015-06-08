@@ -7,7 +7,6 @@ from flask_login import login_user, logout_user, login_required
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
-    response_data = {}
     response_error = {}
     if request.method == 'POST':
         form = LoginForm()
@@ -23,11 +22,9 @@ def login():
                 response_error['code'] = UserError.UserNotExist
         else:
             response_error['code'] = UserError.IllegalForm
-        if not response_error:
-            response_data['error'] = response_error
-        return render_template('login.html', data=response_data)
+        return render_template('login.html', error=response_error)
     else:
-        return render_template('login.html', data=response_data)
+        return render_template('login.html', error=response_error)
 
 @auth.route('/logout', methods=['GET', 'POST'])
 @login_required
