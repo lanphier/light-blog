@@ -26,10 +26,8 @@ def login():
         if not response_error:
             response_data['error'] = response_error
         return render_template('login.html', data=response_data)
-    elif request.method == 'GET':
-        return render_template('login.html', data=response_data)
     else:
-        abort(403)
+        return render_template('login.html', data=response_data)
 
 @auth.route('/logout', methods=['GET', 'POST'])
 @login_required
