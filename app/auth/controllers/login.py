@@ -28,9 +28,10 @@ def login():
         return render_template('login.html', data=response_data)
     elif request.method == 'GET':
         return render_template('login.html', data=response_data)
-    abort(403)
+    else:
+        abort(403)
 
-@auth.route('/logout')
+@auth.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()

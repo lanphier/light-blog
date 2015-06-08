@@ -29,4 +29,5 @@ def register():
         return render_template('register.html', data=response_data)
     elif request.method == 'GET':
         return render_template('register.html', data=response_data)
-    abort(403)
+    else:
+        abort(403)
