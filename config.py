@@ -6,7 +6,7 @@ class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'kaopuchou'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_RECORD_QUERIES = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:19910108@127.0.0.1:5432/light-blog'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:nebula@127.0.0.1:5432/light-blog'
 
     WTF_CSRF_ENABLED = False
     WTF_CSRF_CHECK_DEFAULT = False

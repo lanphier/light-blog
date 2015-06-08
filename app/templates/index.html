@@ -8,8 +8,18 @@
 <body>
 	{% include "common/header.html" %}
 
-	<div>
-		{{ posts }}
+	<div class="index-area">
+		<div class="post-list">
+			{% for post in posts %}
+				<div class="post-detail">
+					<h2>
+						<span class="post-title">{{ post.title }}</span>
+						<span class="post-username">{{ post.user.username }}</span>
+					</h2>
+					<p class="post-content">{{ post.content }}</p>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 </body>
 </html>
