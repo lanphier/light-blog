@@ -3,7 +3,7 @@ from ..forms.register_form import RegisterForm
 from ..models.user import User
 from ..errors import UserError
 from app import db
-from flask import redirect, url_for, request, render_template, abort
+from flask import redirect, url_for, request, render_template
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
