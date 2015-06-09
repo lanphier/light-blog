@@ -10,6 +10,7 @@ class Config(object):
 
     WTF_CSRF_ENABLED = True
     WTF_CSRF_CHECK_DEFAULT = True
+    WTF_CSRF_TIME_LIMIT = 60
 
     OAUTH2_PROVIDER_ERROR_URI = '/oauth/errors'
     OAUTH2_PROVIDER_TOKEN_EXPIRES_IN = 3600
