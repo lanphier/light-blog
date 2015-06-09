@@ -15,11 +15,11 @@ def index():
 @main.route('/create-post', methods=['GET', 'POST'])
 def create_post():
     response_error = {}
+    form = CreatePostForm()
     if request.method == 'POST':
-        create_post_form = CreatePostForm()
-        if create_post_form.validate_on_submit():
-            post = Post(title=create_post_form.title.data,
-                        content=create_post_form.content.data,
+        if form.validate_on_submit():
+            post = Post(title=form.title.data,
+                        content=form.content.data,
                         user=current_user._get_current_object())
             db.session.add(post)
             db.session.commit()
@@ -28,4 +28,4 @@ def create_post():
             response_error['code'] = PostError.IllegalForm
             return render_template('create-post.html', error=response_error)
     else:
-        return render_template('create-post.html')
+        return render_template('create-post.html', form=form, error=response_error)

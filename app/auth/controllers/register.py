@@ -9,8 +9,8 @@ from flask.ext.login import login_user
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
     response_error = {}
+    form = RegisterForm()
     if request.method == 'POST':
-        form = RegisterForm()
         if form.validate_on_submit():
             user = User.query.filter_by(email=form.email.data).first()
             if user is None:
@@ -27,4 +27,4 @@ def register():
             response_error['code'] = UserError.IllegalForm
         return render_template('register.html', error=response_error)
     else:
-        return render_template('register.html', error=response_error)
+        return render_template('register.html', form=form, error=response_error)

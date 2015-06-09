@@ -8,8 +8,8 @@ class Config(object):
     SQLALCHEMY_RECORD_QUERIES = True
     SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:19910108@127.0.0.1:5432/light-blog'
 
-    WTF_CSRF_ENABLED = False
-    WTF_CSRF_CHECK_DEFAULT = False
+    WTF_CSRF_ENABLED = True
+    WTF_CSRF_CHECK_DEFAULT = True
 
     OAUTH2_PROVIDER_ERROR_URI = '/oauth/errors'
     OAUTH2_PROVIDER_TOKEN_EXPIRES_IN = 3600

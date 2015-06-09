@@ -8,8 +8,8 @@ from flask.ext.login import login_user, logout_user, login_required
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     response_error = {}
+    form = LoginForm()
     if request.method == 'POST':
-        form = LoginForm()
         if form.validate_on_submit():
             user = User.query.filter_by(email=form.email.data).first()
             if user is not None:
@@ -24,7 +24,7 @@ def login():
             response_error['code'] = UserError.IllegalForm
         return render_template('login.html', error=response_error)
     else:
-        return render_template('login.html', error=response_error)
+        return render_template('login.html', form=form, error=response_error)
 
 @auth.route('/logout', methods=['GET', 'POST'])
 @login_required
