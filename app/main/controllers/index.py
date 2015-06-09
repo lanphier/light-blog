@@ -4,7 +4,7 @@ from ..errors import PostError
 from ..forms.create_post_form import CreatePostForm
 from app import db
 from flask import render_template, request, redirect
-from flask_login import login_required, current_user
+from flask.ext.login import login_required, current_user
 
 @main.route('/', methods=['GET'])
 def index():

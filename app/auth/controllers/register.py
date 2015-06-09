@@ -4,6 +4,7 @@ from ..models.user import User
 from ..errors import UserError
 from app import db
 from flask import redirect, url_for, request, render_template
+from flask.ext.login import login_user
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
@@ -18,6 +19,7 @@ def register():
                             password=form.password.data)
                 db.session.add(user)
                 db.session.commit()
+                login_user(user, True)
                 return redirect(url_for('main.index'))
             else:
                 response_error['code'] = UserError.UserNotExist

@@ -3,7 +3,7 @@ from ..forms.login_form import LoginForm
 from ..models.user import User
 from ..errors import UserError
 from flask import redirect, url_for, request, render_template
-from flask_login import login_user, logout_user, login_required
+from flask.ext.login import login_user, logout_user, login_required
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
