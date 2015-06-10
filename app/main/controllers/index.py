@@ -11,8 +11,8 @@ def index():
     posts = Post.query.order_by(Post.create_time.desc()).all()
     return render_template('index.html', posts=posts)
 
-@login_required
 @main.route('/create-post', methods=['GET', 'POST'])
+@login_required
 def create_post():
     response_error = {}
     form = CreatePostForm()
