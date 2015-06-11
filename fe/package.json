@@ -1,0 +1,32 @@
+{
+  "name": "style",
+  "version": "3.0.0",
+  "description": "A starting point for scalable, maintainable CSS architecture.",
+  "main": "index.html",
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luyl/style.git"
+  },
+  "keywords": [
+    "css",
+    "smacss",
+    "oocss",
+    "bem"
+  ],
+  "author": "Ben Smithett , modified by luyl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luyl/style/issues"
+  },
+  "homepage": "https://github.com/luyl/style",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-css-globbing": "^0.1.8",
+    "gulp-cssimport": "^1.3.1",
+    "gulp-sass": "^2.0.1",
+    "node-notifier": "^4.2.1"
+  }
+}

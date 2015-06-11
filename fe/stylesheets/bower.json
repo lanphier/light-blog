@@ -1,0 +1,8 @@
+{
+  "name": "style",
+  "dependencies": {
+    "metaquery": "~1.1.1",
+    "susy": "~2.2.5",
+    "normalize-scss": "~3.0.3"
+  }
+}

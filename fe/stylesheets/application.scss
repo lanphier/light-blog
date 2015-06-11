@@ -1,0 +1,37 @@
+@charset "utf-8"
+
+// Vendor mixin/function libraries
+@import "bower-sass/susy/sass/susy.scss";
+
+// Your mixins & functions
+@import "functions/**/*";
+@import "mixins/**/*";
+
+// Global config variables: colors, font stacks, etc
+@import "config/**/*";
+
+// @font-face webfonts
+@import "fonts/**/*";
+
+// @keyframe animations
+@import "animations/**/*";
+
+
+// Base styles
+// ------------------------------------------------
+// Normalize.css
+// @import "bower-sass/normalize-scss/_normalize.scss";
+
+// Our own base styles
+@import "base/**/*";
+
+
+// Modules
+// ------------------------------------------------
+@import "modules/**/*";
+
+
+// Utilities
+// ------------------------------------------------
+// See https://github.com/suitcss/suit/blob/master/doc/utilities.md
+@import "utilities/**/*";
