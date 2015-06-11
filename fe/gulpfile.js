@@ -14,7 +14,7 @@ function notifyError(){
 }
 
 gulp.task('sass', function () {
-  return gulp.src('./stylesheets/application.scss')
+  return gulp.src('./stylesheets/page/index.scss')
   	.pipe(cssimport({
   		extensions: ['.css']
   	}))
@@ -26,7 +26,7 @@ gulp.task('sass', function () {
         browsers: ['last 2 versions','IE 8'],
         cascade: true
     }))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./static/css'));
 });
 
 gulp.task('sass:watch', function () {
