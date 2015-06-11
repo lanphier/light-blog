@@ -3,8 +3,7 @@
   "version": "3.0.0",
   "description": "A starting point for scalable, maintainable CSS architecture.",
   "main": "index.html",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/luyl/style.git"
@@ -22,11 +21,18 @@
   },
   "homepage": "https://github.com/luyl/style",
   "dependencies": {
+    "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-css-globbing": "^0.1.8",
     "gulp-cssimport": "^1.3.1",
+    "gulp-minify-css": "^1.1.6",
+    "gulp-replace": "^0.5.3",
+    "gulp-rev": "^4.0.0",
+    "gulp-rev-replace": "^0.4.1",
     "gulp-sass": "^2.0.1",
-    "node-notifier": "^4.2.1"
+    "gulp-uglify": "^1.2.0",
+    "node-notifier": "^4.2.1",
+    "run-sequence": "^1.1.0"
   }
 }
